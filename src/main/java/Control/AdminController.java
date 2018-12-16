@@ -36,7 +36,7 @@ public class AdminController {
 	    }
 	
 	//index
-	@RequestMapping("/")
+	@RequestMapping("")
     public String intdex(Model model) throws SQLException {
 		return "/index";
     }
