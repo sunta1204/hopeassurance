@@ -15,8 +15,12 @@ public class MemberDAO {
 	
 	// สร้างเมธอดชื่อเดียวกับคลาส (constructor)
 		public MemberDAO() throws SQLException, ClassNotFoundException {
-			Class.forName("com.mysql.jdbc.Driver"); // โหลด JDBC Driver
-			con = DriverManager.getConnection("jdbc:postgresql://ec2-23-21-65-173.compute-1.amazonaws.com:5432/dasv3f8h6p1jmu?characterEncoding=utf-8&sslmode=require", "mvzxqoanypdolk", "a0fb3792d2a352e66029d6f2d1fd20d3e0f5d40708289a4d00b89669c9fdd46a"); // เชื่อมต่อกับฐานข้อมูล
+			Class.forName("org.postgresql.Driver"); // โหลด JDBC Driver
+			String username = "mvzxqoanypdolk";
+			String password = "a0fb3792d2a352e66029d6f2d1fd20d3e0f5d40708289a4d00b89669c9fdd46a";
+			String dbUrl = "jdbc:postgresql://" + "ec2-23-21-65-173.compute-1.amazonaws.com:5432"
+					+ "/dasv3f8h6p1jmu?sslmode=require";
+			con = DriverManager.getConnection(dbUrl , username , password); // เชื่อมต่อกับฐานข้อมูล
 		}
 		
 		// สร้างเมธอดสำหรับปิดการเชื่อมต่อฐานข้อมูล
